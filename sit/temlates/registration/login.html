@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet"  href="{% static 'bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+</head>
+<body>
+
+  <section>
+      <div class="container">
+      	<div class="form_content">
+      	<h2>What is information of Technology? </h2>
+      	<p> Ambedker institut of technology,It is releted to ITES&M  Informaion enable servic and managemant.It is delhi  top 1  govt. Istitution. and I am a student of department of ITES&M. </p>
+      	<a href="">Read more</a>
+
+      	</div>
+      	<div class="login_form">
+      		<h1>Login</h1>
+      		
+        {% if form.errors %}   
+        <h1>he somthing wrong</h1>
+        {% endif %}
+        {% if next %}   
+        <h1>he you cant access this page</h1>
+        {% endif %}
+
+	<form method="post" action="{% url 'login' %}">
+		   
+		    {% csrf_token %}
+		<p>Username: {{ form.username }}</p>
+		<p>Password: {{ form.password }}</p>
+
+	    
+		<input type="submit" value="submit">
+		<input type="hidden" name="next" value="{{ next }}">	
+	 </form>
+            
+
+
+
+      			
+           
+      		<a href="{% url 'sign' %}">sign in</a>
+      	</div>
+     </div>
+
+    
+
+
+
+
+
+
+
+
+
+    {% if user.is_authenticated %}
+	<h1>youre name is: {{ user.username}}</h1>
+	<a href="{% url 'logout' %}">Logout</a>
+    {% endif %}
+
+  </section>
+</body>
+</html>
