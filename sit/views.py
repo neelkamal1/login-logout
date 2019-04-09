@@ -1,14 +1,22 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
+from .models import uni
+from  django.db.models import Q
 
-# Create your views here.
+
+
 
 def index(request):
-	return render(request,'sit/index.html')
-
-
 	
+	return render(request,'sit/index.html',{})
+
+
+def index1(request):
+    
+    return render(request,'sit/index1.html',{})
+
+
 
 
 def register(request):
@@ -39,7 +47,24 @@ def register(request):
 
 
 
+
+
 def logout1(request):
     logout(request)
-    return redirect('index')
+    return redirect('index1')
+
+def coll(request):
+    if request.method =='POST':
+        serch = request.POST['srh']
+        if serch:
+            match = uni.objects.filter(Q(cname__icontains=serch))
+            if match:
+                return render(request,'sit/coll.html', {'sr':match})
+  
+              
+    return render(request,'sit/coll.html',{'coll':coll})
 	
+
+
+def indo(request):
+    return render(request,'sit/indo.html')

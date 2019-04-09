@@ -1,0 +1,80 @@
+{% extends 'sit/base.html' %}
+{% load static %}
+{% block content %}
+
+{% if messages %}
+{% for k in messages %}
+{{ k }}
+{% endfor %}
+{% endif %}
+{% if sr %}
+{% for k in sr %}
+    <div class="section-1">
+            <div class="container text-center">
+                <h1 class="heading-1">? How, ? When</h1>
+                <h1 class="heading-2">?
+{{k.cname}}
+
+
+               
+
+         
+
+
+        </h1>
+                <p class="para-1">
+{{k.cpera}}
+
+                </p>
+                <div class="row justify-content-center text-center">
+                <div class="col-md-4">
+                <div class="card" style="width:20rem;">
+                <img src="{% static 'index/font/amb.jpg' %}" alt="Image1" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title"> 
+{{k.chname}}
+</h4>
+                    <p class="card-text">
+{{k.chist}}
+ </p>
+                </div>
+                </div> 
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width:20rem;" >
+                    <img src="{% static 'index/font/aw2.jpg' %}" height="223px" alt="Image2" class="card-img-top " />
+                    <div class="card-body">
+                        <h4 class="card-title">
+{{k.achiv}}
+ </h4>
+                        <p class="card-text">
+{{k.achivhis}}
+
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                 <div class="card" style="width:20rem;">
+                <img src="{% static 'index/font/Learning.jpg' %}" height="250px" alt="image3" class="card-img-top" />
+                <div class="card-body">
+                    <h4 class="card-title">
+{{k.depart}}
+</h4>
+                    <p class="card-text">
+{{k.departhis}}
+
+                     
+                        
+                    </p>
+                </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+{% endfor %}
+{% endif %}
+
+
+{% endblock %}

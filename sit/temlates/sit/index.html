@@ -1,34 +1,27 @@
+{% extends 'sit/base.html' %}
 {% load static %}
-<html>
-<head>
-	<title>unother page</title>
-	<link rel="stylesheet"  href="{% static 'bootstrap.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'index/style.css' %}">
-</head>
-<body>
+
+        {% block cont %}
+        <div class="container-fluid p-0">
+            <div class="site-content">
+                <div class="d-flex justify-content-center">
+                    <div class="d-flex flex-column">
+                        <h1 class="site-title">Bootstrap User Interface</h1>
+                        <p class="site-desc">This is Ambedker quary site . It provides informations fullsport regarding  Ambedker institution </p>
+                          <div class="d-flex flex-row">
+                            
+                       {% if user.is_authenticated %}
+ <a class="btn manu-right-btn border" href="{% url 'inde' %}" style="background-color:#00E8E8;">Add new Query</a>
+              
+            <h2>You are logged in </h2><br><br>
 
 
+  <h4>Hello mr {{user.username}} how are you : <br><br>
 
+  <br>  <h2>{{ user.username}}</h2></h4><br><br>
+  
 
-
-
-
-  <section>
-      <div class="container">
-      	<div class="form_content">
-      	<h2>What is information of Technology? </h2>
-      	<p> Ambedker institut of technology,It is releted to ITES&M  Informaion enable servic and managemant.It is delhi  top 1  govt. Istitution. and I am a student of department of ITES&M. </p>
-      	<a href="">Read more</a>
-
-      	</div>
-      	<div class="login_form">
-      			{% if user.is_authenticated %}
-      			<h2>You are logged in </h2><br><br>
-	<h4>Hello mr {{user.username}} how are you : <br><br>
-	<br>	<h2>{{ user.username}}</h2></h4><br><br>
-	
-
-
+     
 
 
 
@@ -39,22 +32,100 @@
 
 
 
-<a href="{% url 'logout' %}">Logout</a>
 
 {% else %}
-    <h2> Pleas login </h2><br><br>
+    <h2> Pleas Join Us </h2><br><br>
 
-  <h1>      <a href="{% url 'sign' %}">sign in</a><br><br>
-	        <a href="{% url 'login' %}">Login</a></h1>
+ 
+
 {% endif %}
 
 
 
+        
+                            
 
 
 
-  </div>
-  </div>
-  </section>
-</body>
-</html>
+
+
+                        </div>
+                    </div> 
+                    
+                  </div>
+
+               </div>
+        </div>
+
+        <div class="section-1">
+            <div class="container text-center">
+                <h1 class="heading-1">? How, ? When</h1>
+                <h1 class="heading-2">? About Ambedkar Institute Of technology</h1>
+                <p class="para-1">Campus Area 3.14 Hect. Plot Area Building Area of 9822 sq. mts Building  Area Consists of 6 Blocks - a, B, C, D, E & F.
+
+                Collage Building as per AICTE norms with appropriate Classrooms Canteen & 2 inbuilt Lecture theaters(LT-1 & LT-2) Basket Ball and Volley Ball Playground alongwith a Badminton Court.
+                </p>
+                <div class="row justify-content-center text-center">
+                <div class="col-md-4">
+                <div class="card" style="width:20rem;">
+                <img src="{% static 'index/font/amb.jpg' %}" alt="Image1" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title"> What is History of Institute ?</h4>
+                    <p class="card-text">Ambekar Institute of Technology was Established in 1986 by the Department of Training & Technical Education (D.T.T.E), Govt. of N.C.T Of Delhi , Initially shered its campus with the Pusa Institute of Technology and on 6th Dec. 1996, it was shifted its presents location in Shakarpur delhi . </p>
+                </div>
+                </div> 
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width:20rem;" >
+                    <img src="{% static 'index/font/aw2.jpg' %}" height="223px" alt="Image2" class="card-img-top " />
+                    <div class="card-body">
+                        <h4 class="card-title">Achievement </h4>
+                        <p class="card-text"> Received 2nd  time Best polytechnic (outstanding technical intitution)
+                          award on 7th September 2016 from NITTTR Chandigarh. Ambedkar Intitute of Technology is an ISO 9001:2008 certified Institute Due to its outstanding work . Received Best Polytechnic award From NITTTR Chandigarh.
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                 <div class="card" style="width:20rem;">
+                <img src="{% static 'index/font/Learning.jpg' %}" height="250px" alt="image3" class="card-img-top" />
+                <div class="card-body">
+                    <h4 class="card-title">Department</h4>
+                    <p class="card-text">
+                            Ambedkar Institute of technology has Following department's 
+                            Applied Physics,
+                            Instrumentation & Control,
+                            ITES&M,
+                            Computer Science & Engg.,
+                            Medical Engineering,
+                            BCA
+                            B.VOC.(SD)
+                            B.VOC.(MC)
+
+                    </p>
+                </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="section-2">
+              <div class="container-fluid">
+                  <div class="d-flex justify-content-end">
+
+                <div class="d-flex flex-column m-4">
+                    <h1 class="heading-1">Vision ?</h1>
+                    <p class="para">To become one of the most admin admired centers of academics axcellence in the field of Engineering Technology for all round professional of student enable them meet to growing technological needs of the country. </p>
+                     <h1 class="heading-1">Mission ?</h1>
+                    <p class="para">Dedicated to Excellence in overall performance, Ambedkar Institute of Technology is committed to Provide Qualitative educational apportunities Zeal and sevice that meat of Exceed the needs of learner industry/ Bussiness orgnizations and our community.  </p>
+
+                            <input type="button" value="Show" class="btn btn-danger" >
+                
+                            </div>
+                        </div>
+              </div>
+        </div>
+
+        {% endblock %}
